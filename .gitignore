@@ -1,0 +1,33 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+/[Vv]ideo/
+/SaveData/
+
+# Autogenereated Visual Studio files
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Unity3D Genrated Make files
+*.pidb.meta
+
+# Unity3D Generated crash report
+sysinfo.txt
+
+# Builds
+*.apk
+*.unitypackage
+*.app
