@@ -5,13 +5,11 @@ using UnityEngine;
 [RequireComponent( typeof( Wand ) )]
 public class WandTeleporter : MonoBehaviour {
 
-    // The projectil this thing fires
     [SerializeField]
-    private Projectile projectilePrefab;
+    private LayerMask layerMask;
 
+    private ProjectileWeapon wand;
 
-    private Wand wand;
-    private int layerMask;
 
     private void Awake() {
         wand = GetComponent<Wand>();
@@ -19,13 +17,13 @@ public class WandTeleporter : MonoBehaviour {
     }
 
     /// <summary>
-    /// Spawn a new projectile from the pool on fire.
+    /// Teleport on fire if possible
     /// </summary>
     void Wand_OnFire() {
-        RaycastHit rayInfo;
+        RaycastHit hitInfo;
         Ray ray = new Ray( transform.position, transform.forward );
-        if ( Physics.Raycast( ray, out rayInfo, Mathf.Infinity, (int) layerMask ) ){
-            DoTeleport( rayInfo.point );
+        if ( Physics.Raycast( ray, out hitInfo, Mathf.Infinity, (int) layerMask ) ){
+            DoTeleport( hitInfo.point );
         }
     }
 
